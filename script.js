@@ -1,1 +1,8 @@
-document.querySelectorAll(".badge").forEach(b => b.onclick = () => { document.querySelectorAll(".badge").forEach(x => { const on = x == b; x.setAttribute("aria-pressed", on); document.getElementById(x.dataset.t).hidden = !on }) });
+document.querySelectorAll(".badge").forEach(
+    b => b.onclick = () => {
+        document.querySelectorAll(".badge").forEach(
+            x => {
+                const on = x == b; x.setAttribute("aria-pressed", on);
+                document.getElementById(x.dataset.t).hidden = !on
+            })
+    });
