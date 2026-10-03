@@ -1,8 +1,10 @@
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
+    color:white;
+    background-color:black;
 }
 
 main {
@@ -12,15 +14,19 @@ main {
 
 #site-header {
     font-size:32px;
-    background-color: yellow;
+    background-color: grey;
     display:flex;
     gap:24px;
     position: fixed;
     top:0;
     left:0;
     right:0;
+    #site-navbar{
+        display:flex;
+        gap:12px;
+    }
     a {
-        color:blue;
+        color:white;
         text-decoration: none;
     }
 }
