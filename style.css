@@ -12,6 +12,10 @@ main {
     margin: 16px;
 }
 
+a {
+    color:skyblue;
+}
+
 #site-header {
     font-size:32px;
     background-color: grey;
