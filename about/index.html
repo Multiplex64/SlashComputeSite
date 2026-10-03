@@ -3,43 +3,91 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>SlashCompute</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="/style.css" rel="stylesheet" type="text/css">
-    <script src="/script.js" defer type="text/javascript" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | SlashCompute</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
 </head>
 
 <body>
-    <header id="site-header">
-        <div id="site-logo">
-            <a href="/">SlashCompute</a>
-        </div>
-        <nav id="site-navbar">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/download">Download</a>
-        </nav>
+    <header><a href="/">/compute</a>
+        <nav><a href="/">Home</a><a href="/about/" aria-current=page>About</a><a href="/download/">Download</a></nav>
     </header>
     <main>
-        <h1>What is SlashCompute?</h1>
-        <h3>Summary</h3>
-        <p>
-            SlashCompute allows anyone to share GPU power across our network. We are dedicated to making tools like AI
-            more accessible to people with lower power devices.
-        </p>
-        <h3>Credit System</h3>
-        <p>
-            You give what you take. You can earn Credits by donating your GPU power to the pool. When you want to use
-            this power
-        </p>
-        <h3>Security</h3>
-        <p>
-            SlashCompute runs through a Linux VM on your device for maximum security.
-        </p>
+        <div class="wrap hero">
+            <div>
+                <h1>Give<br>&amp; Take</h1>
+                <p>Anyone can contribute and anyone can take. You get out what you put in.</p>
+                <div class="btns"><a class="btn" href="/download/">Download</a><a class="btn alt" href="/">Home</a>
+                </div>
+            </div>
+            <div class="stage"><svg class="mass" viewBox="0 0 400 440" role="img"
+                    aria-label="Ringed column on a checker plinth">
+                    <defs>
+                        <pattern id="ck" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <rect width="40" height="40" class="f1" />
+                            <rect width="20" height="20" class="f3" />
+                            <rect x="20" y="20" width="20" height="20" class="f3" />
+                        </pattern>
+                        <radialGradient id="sg">
+                            <stop offset="0" stop-color="#000" />
+                            <stop offset="1" stop-color="#000" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+                    <ellipse class="sh" cx="200" cy="420" rx="195" ry="20" fill="url(#sg)" />
+                    <rect x="20" y="340" width="360" height="80" fill="url(#ck)" />
+                    <rect x="150" y="60" width="100" height="280" class="f2" />
+                    <ellipse cx="200" cy="340" rx="50" ry="10" class="f1" />
+                    <rect x="150" y="60" width="100" height="280" class="f2" />
+                    <ellipse cx="200" cy="60" rx="50" ry="10" class="f3" />
+                    <rect x="132" y="130" width="136" height="22" class="f1" />
+                    <ellipse cx="200" cy="130" rx="68" ry="9" class="f3" />
+                    <rect x="132" y="220" width="136" height="22" class="f3" />
+                    <ellipse cx="200" cy="242" rx="68" ry="9" class="f1" />
+                </svg></div>
+        </div>
+        <section class="slab">
+            <div class="wrap why">
+                <h2 style="color:#f2f2f0">Why</h2>
+                <div>
+                    <p>Everyone wants to get into AI, but most people don't have a computer powerful enough for it.
+                        Students feel this most.</p>
+                    <p>When the hardware is out of reach, AI skills become a privilege. SlashCompute pools spare GPU
+                        power so the people who have it can help the people who don't.</p>
+                </div>
+            </div>
+        </section>
+        <div class="wrap props" style="padding:0;max-width:1120px">
+            <div><b>Give</b>
+                <h3>Share a slice of your GPU</h3>Pick the percentage. It runs in the background.
+            </div>
+            <div><b>Earn</b>
+                <h3>Get paid in credits</h3>One universal measure of computing power, shown live.
+            </div>
+            <div><b>Take</b>
+                <h3>Spend on the pool</h3>Run on demand, or join a queue and see the wait.
+            </div>
+        </div>
+        <div class="wrap props two" style="padding:0;max-width:1120px;margin-top:0">
+            <div><b>Students</b>
+                <h3>Need more than their laptop</h3>Spend the credits you earn, or ask the community for a grant that
+                explains your project.
+            </div>
+            <div><b>Contributors</b>
+                <h3>Have power to spare</h3>Choose how much of your GPU runs and how much of your credits go to grants.
+            </div>
+        </div>
+        <section class="comm">
+            <div class="wrap">
+                <h2 style="color:#f2f2f0">Safeguards</h2>
+                <div style="margin-top:32px">
+                    <div class="row"><span>Linux VM</span><span>SlashCompute runs inside one on your device</span></div>
+                    <div class="row"><span>Stop any time</span><span>You end a session whenever you want</span></div>
+                    <div class="row"><span>Clear terms</span><span>Shown before anything runs on your machine</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
