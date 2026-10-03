@@ -22,7 +22,7 @@ body {
     margin: 0;
     font: 400 15px/1.6 "Martian Mono", monospace;
     color: #f2f2f0;
-    background: radial-gradient(ellipse at 50% 38%, #e7e7e4 0, #c9c9c6 30%, #6e6e6c 62%, #141414 100%) fixed
+    background: dimgrey;
 }
 
 body::after {
