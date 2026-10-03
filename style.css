@@ -1,0 +1,26 @@
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top:32px;
+    margin: 16px;
+}
+
+#site-header {
+    font-size:32px;
+    background-color: yellow;
+    display:flex;
+    gap:24px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    a {
+        color:blue;
+        text-decoration: none;
+    }
+}
