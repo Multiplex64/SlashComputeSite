@@ -307,7 +307,8 @@ pre span.l::before {
 
     .hero,
     .comm .cols,
-    .props {
+    .props,
+    .why-layout {
         grid-template-columns: 1fr
     }
 
@@ -323,6 +324,38 @@ pre span.l::before {
 @media(prefers-reduced-motion:reduce) {
     .btn:hover {
         transform: none
+    }
+
+    .story .scene[data-pin] {
+        height: auto
+    }
+
+    .story .scene-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible
+    }
+
+    .why-sheet,
+    .why-copy,
+    .story .props > div,
+    .safe-title,
+    .safe-rows .row {
+        opacity: 1 !important;
+        transform: none !important
+    }
+
+    .qmark,
+    .fan,
+    .mini-fan,
+    .arrow,
+    .usage path {
+        animation: none !important
+    }
+
+    .usage path {
+        stroke-dashoffset: 0;
+        opacity: 1
     }
 }
 
@@ -345,4 +378,335 @@ pre span.l::before {
 .props+.slab,
 .props+.comm {
     margin-top: 0
+}
+
+:root {
+    --bar: 52px
+}
+
+.story ::selection {
+    background: #d6ff00;
+    color: #141414
+}
+
+.scene-give {
+    min-height: calc(100dvh - var(--bar));
+    display: flex;
+    align-items: center
+}
+
+.scene-give .hero {
+    width: 100%
+}
+
+.scene[data-pin] {
+    --p: 0;
+    position: relative;
+    height: 240vh
+}
+
+.scene-why {
+    height: 280vh
+}
+
+.scene-sticky {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    overflow: hidden
+}
+
+.why-sheet {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    padding-top: var(--bar);
+    background: #141414;
+    color: #f2f2f0;
+    display: flex;
+    align-items: center;
+    transform: translateY(calc(-100% * (1 - min(var(--p) / .42, 1))))
+}
+
+.why-layout {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 24px;
+    align-items: center;
+    width: 100%
+}
+
+.why-title {
+    display: flex;
+    align-items: flex-end;
+    gap: .06em;
+    margin: 0;
+    color: #f2f2f0;
+    font: 400 clamp(56px, 11vw, 172px)/.82 "Archivo Black", sans-serif;
+    letter-spacing: -.04em
+}
+
+.qmark {
+    height: .78em;
+    width: auto;
+    flex: none;
+    transform-origin: 50% 72%;
+    animation: rock 5s ease-in-out infinite alternate
+}
+
+.why-copy {
+    opacity: clamp(0, (var(--p) - .48) / .28, 1);
+    transform: translateY(calc(18px * (1 - clamp(0, (var(--p) - .48) / .28, 1))))
+}
+
+.why-copy p {
+    margin: 0 0 16px;
+    max-width: 42ch;
+    color: #f2f2f0
+}
+
+.why-copy p:last-child {
+    margin-bottom: 0
+}
+
+.scene-product .scene-sticky,
+.safe-sticky {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: var(--bar)
+}
+
+.board {
+    width: 100%
+}
+
+.story .props > div {
+    position: relative;
+    overflow: hidden
+}
+
+.story .scene-product .props > div {
+    opacity: clamp(0, (var(--p) - var(--d, 0)) / .22, 1);
+    transform: translateY(calc(28px * (1 - clamp(0, (var(--p) - var(--d, 0)) / .22, 1))))
+}
+
+.story .props > div > .copy {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: inherit;
+    border: 0;
+    padding: 0
+}
+
+.story .props > .card-earn > .copy {
+    padding-right: 52px
+}
+
+.card-earn .arrows {
+    left: auto;
+    right: 14px;
+    width: 44px
+}
+
+.story .props > .card-give {
+    padding-right: 116px
+}
+
+.fan {
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    width: 84px;
+    height: 84px;
+    z-index: 1;
+    animation: spin 2.8s linear infinite
+}
+
+.arrows {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden
+}
+
+.arrow {
+    position: absolute;
+    left: var(--x);
+    top: 0;
+    height: 100%;
+    animation: rise var(--dur, 4s) linear infinite;
+    animation-delay: var(--delay, 0s)
+}
+
+.arrow svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    opacity: .42
+}
+
+.story .props > .card-take {
+    padding-bottom: 92px
+}
+
+.usage {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 16px;
+    width: auto;
+    height: 72px;
+    z-index: 1
+}
+
+.usage path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw 3.8s ease-in-out infinite
+}
+
+.story .props.two > div {
+    min-height: 196px;
+    padding-right: 168px
+}
+
+.figure {
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    width: 140px;
+    height: 148px;
+    z-index: 1
+}
+
+.mini-fan {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spin 2.4s linear infinite
+}
+
+.safe-sticky {
+    background: #141414;
+    color: #f2f2f0
+}
+
+.safe-title {
+    --d: 0;
+    color: #f2f2f0;
+    opacity: clamp(0, (var(--p) - var(--d)) / .2, 1);
+    transform: translateY(calc(20px * (1 - clamp(0, (var(--p) - var(--d)) / .2, 1))))
+}
+
+.safe-rows {
+    margin-top: 32px
+}
+
+.safe-rows .row:nth-child(1) {
+    --d: .3
+}
+
+.safe-rows .row:nth-child(2) {
+    --d: .48
+}
+
+.safe-rows .row:nth-child(3) {
+    --d: .66
+}
+
+.safe-rows .row {
+    opacity: clamp(0, (var(--p) - var(--d, 0)) / .18, 1);
+    transform: translateY(calc(16px * (1 - clamp(0, (var(--p) - var(--d, 0)) / .18, 1))))
+}
+
+@keyframes rock {
+    from {
+        transform: rotate(-12deg)
+    }
+
+    to {
+        transform: rotate(12deg)
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(105%)
+    }
+
+    to {
+        transform: translateY(-105%)
+    }
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 100;
+        opacity: 1
+    }
+
+    68% {
+        stroke-dashoffset: 0;
+        opacity: 1
+    }
+
+    86% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+
+    100% {
+        stroke-dashoffset: 100;
+        opacity: 0
+    }
+}
+
+@media(max-width:760px) {
+    .scene-why[data-pin] {
+        height: 180vh
+    }
+
+    .scene-product[data-pin],
+    .scene-safe[data-pin] {
+        height: 160vh
+    }
+
+    .scene-why .scene-sticky,
+    .scene-product .scene-sticky,
+    .scene-safe .scene-sticky {
+        overflow-y: auto
+    }
+
+    .why-layout,
+    .story .props.two {
+        grid-template-columns: 1fr
+    }
+
+    .story .props.two > div {
+        min-height: 0;
+        padding-right: 24px
+    }
+
+    .figure {
+        position: static;
+        display: block;
+        width: 120px;
+        height: 128px;
+        margin-top: 16px
+    }
+}
+
+@media(max-height:740px) {
+    .scene-product .scene-sticky,
+    .scene-safe .scene-sticky {
+        overflow-y: auto
+    }
 }
